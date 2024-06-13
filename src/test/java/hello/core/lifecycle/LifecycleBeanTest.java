@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 public class LifecycleBeanTest {
-    ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
+    ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifecycleBean.class, LifeCycleConfig.class);
 
     @Test
     void lifecycleTest() {
@@ -16,10 +16,10 @@ public class LifecycleBeanTest {
 
     @Configuration
     public static class LifeCycleConfig {
-        @Bean(initMethod = "init")
-        public LifecycleBean lifecycleBean() {
-            return new LifecycleBean(lifeCycleDependencyBean());
-        }
+//        @Bean(initMethod = "init")
+//        public LifecycleBean lifecycleBean() {
+//            return new LifecycleBean(lifeCycleDependencyBean());
+//        }
 
         @Bean
         public LifeCycleDependencyBean lifeCycleDependencyBean() {
