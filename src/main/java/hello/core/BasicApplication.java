@@ -17,9 +17,9 @@ public class BasicApplication {
 //        MemberService memberService = appConfig.memberService();
 //        OrderService orderService = appConfig.orderService();
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BasicApplication.class);
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
-        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
+        OrderService orderService = applicationContext.getBean(OrderService.class);
 
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
