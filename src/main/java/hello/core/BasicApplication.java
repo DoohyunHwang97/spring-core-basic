@@ -16,16 +16,16 @@ public class BasicApplication {
 //        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = appConfig.memberService();
 //        OrderService orderService = appConfig.orderService();
-
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BasicApplication.class);
-        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
-        OrderService orderService = applicationContext.getBean(OrderService.class);
-
-        Member member = new Member(1L, "memberA", Grade.VIP);
-        memberService.join(member);
-
-        Order order = orderService.createOrder(1L, "itemA", 10000);
-        System.out.println("order = " + order);
-//        SpringApplication.run(BasicApplication.class, args);
+//
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BasicApplication.class);
+//        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+//        OrderService orderService = applicationContext.getBean(OrderService.class);
+//
+//        Member member = new Member(1L, "memberA", Grade.VIP);
+//        memberService.join(member);
+//
+//        Order order = orderService.createOrder(1L, "itemA", 10000);
+//        System.out.println("order = " + order);
+        SpringApplication.run(BasicApplication.class, args);
     }
 }
